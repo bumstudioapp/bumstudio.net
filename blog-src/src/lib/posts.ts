@@ -10,12 +10,13 @@ export const langOf = (entry: PostEntry): Lang =>
 export const slugOf = (entry: PostEntry): string =>
   entry.id.replace(/^(en|vi)\//, '');
 
-export async function getPosts(lang: Lang): Promise<PostEntry[]> {
+export async function getPosts(lang: Lang, game?: string): Promise<PostEntry[]> {
   const prefix = `${lang}/`;
   return (
     await getCollection(
       'blog',
-      ({ data, id }) => !data.draft && id.startsWith(prefix),
+      ({ data, id }) =>
+        !data.draft && id.startsWith(prefix) && (!game || data.game === game),
     )
   ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
@@ -28,3 +29,6 @@ export const postPath = (lang: Lang, slug: string) =>
 export const categoryPath = (lang: Lang, slug: string) =>
   `${langPrefix(lang)}/category/${slug}/`;
 export const homePath = (lang: Lang) => `${langPrefix(lang)}/`;
+
+export const gamePath = (lang: Lang, game: string) =>
+  `${langPrefix(lang)}/games/${game}/`;

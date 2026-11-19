@@ -3,6 +3,7 @@ title: "Post title here"
 description: "One or two sentences, max 160 characters — this shows in search results and post cards."
 pubDate: 2026-11-19
 category: News
+game: rps-master
 tags: ["rps-master"]
 draft: false
 ---
@@ -22,3 +23,5 @@ POSTING CHECKLIST (bilingual blog):
 3. Filename = lowercase, hyphens, no spaces, ends with .md (turn ON "File name extensions" in Windows Explorer so it does not become .md.md).
 4. Commit both files — GitHub Actions builds and publishes automatically.
 -->
+
+<!-- game: rps-master hoặc slide-pocket — bài sẽ hiện ở trang blog riêng của game đó (/blog/games/<game>/) và trang game trên web chính. -->

@@ -43,6 +43,47 @@ const websiteLd = {
   inLanguage: lang === 'vi' ? 'vi-VN' : 'en',
   publisher: { '@type': 'Organization', name: 'BumStudio', url: STUDIO_URL },
 };
+
+// ---- Shared Quad chrome (same header/footer as bumstudio.net) ----
+const studioRoot = lang === 'vi' ? '/vi/' : '/';
+const blogHome = `${BASE}${langPrefix(lang)}/`;
+const otherLangHref = lang === 'en' ? viHref : enHref;
+const otherLangLabel = lang === 'en' ? 'VI' : 'EN';
+const hubRps = lang === 'vi' ? '/vi/rpsmaster/' : '/rpsmaster/';
+const hubSlide = lang === 'vi' ? '/vi/slidepocket/' : '/slidepocket/';
+const catHref = (c: string) => `${BASE}${langPrefix(lang)}/category/${c}/`;
+const T = lang === 'vi' ? {
+  navHome: 'Trang chủ', navGames: 'Game', navAbout: 'Giới thiệu', navNews: 'Tin tức', navContact: 'Liên hệ',
+  play: 'Chơi RPS Master',
+  footH: 'Theo dõi hành trình — Chơi game ngay',
+  footSub: 'RPS Master miễn phí trên Google Play · Bài blog mới mỗi tuần',
+  footBtn: 'Vào Blog',
+  intro: 'BumStudio là studio game độc lập từ Hà Nội, Việt Nam — làm những game nhỏ mà có võ.',
+  colExplore: 'Khám phá', colGames: 'Game', colBlog: 'Blog', colContact: 'Liên hệ',
+  playStore: 'RPS Master trên Google Play',
+  location: 'Kim Liên, Hà Nội, Việt Nam',
+} : {
+  navHome: 'Home', navGames: 'Game', navAbout: 'About', navNews: 'News', navContact: 'Contact',
+  play: 'Play RPS Master',
+  footH: 'Follow the Journey — Play the Games',
+  footSub: 'RPS Master is free on Google Play · New posts on the blog every week',
+  footBtn: 'Visit the Blog',
+  intro: 'BumStudio is an independent game studio from Hanoi, Vietnam — crafting small games with big charm.',
+  colExplore: 'Explore', colGames: 'Games', colBlog: 'Blog', colContact: 'Contact',
+  playStore: 'RPS Master on Google Play',
+  location: 'Kim Lien, Hanoi, Vietnam',
+};
+const quadCss = [
+  'plugins/bootstrap.min.css', 'plugins/swiper.bundle.css', 'plugins/fontawesome.css',
+  'plugins/mobile.css', 'plugins/magnific-popup.css', 'plugins/slick-slider.css',
+  'plugins/owlcarousel.min.css', 'plugins/aos.css', 'typography.css', 'master.css',
+];
+const quadJs = [
+  'plugins/jquery-3-6-0.min.js', 'plugins/bootstrap.min.js', 'plugins/swiper.bundle.js',
+  'plugins/mobilemenu.js', 'plugins/slick-slider.js', 'plugins/owlcarousel.min.js',
+  'plugins/counter.js', 'plugins/waypoints.js', 'plugins/aos.js', 'plugins/gsap.min.js',
+  'plugins/magnific-popup.js', 'plugins/ScrollTrigger.min.js', 'main.js',
+];
 ---
 
 <!doctype html>
@@ -59,7 +100,6 @@ const websiteLd = {
     <meta name="robots" content="index, follow" />
     <link rel="alternate" type="application/rss+xml" title="RPS Master Blog" href={rssHref} />
     <link rel="sitemap" href={`${BASE}/sitemap-index.xml`} />
-    <!-- Open Graph -->
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="RPS Master Blog" />
     <meta property="og:locale" content={ui.ogLocale} />
@@ -67,40 +107,203 @@ const websiteLd = {
     <meta property="og:description" content={pageDesc} />
     <meta property="og:url" content={canonical} />
     {ogImage && <meta property="og:image" content={ogImage} />}
-    <!-- Twitter -->
     <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDesc} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
     <script type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
     {extraLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
+    <link rel="shortcut icon" href="/assets/images/logo/logo-bumstudio-icon.png" />
+    {quadCss.map((f) => <link rel="stylesheet" href={`/assets/css/${f}`} />)}
   </head>
   <body>
-    <header class="site">
-      <div class="wrap">
-        <a class="brand" href={`${BASE}${langPrefix(lang)}/`}>RPS Master <span>Blog</span></a>
-        <nav class="main">
-          <a href={studioHref}>BumStudio</a>
-          {CATEGORIES.map((c) => <a href={`${BASE}${langPrefix(lang)}/category/${categorySlug(c)}/`}>{CAT_LABEL[lang][c]}</a>)}
-          <a class="btn-play" href={PLAY_STORE_URL} rel="noopener">{ui.getGame}</a>
-          <span class="lang-switch">
-            <a href={enHref} class={lang === 'en' ? 'active' : ''} hreflang="en">EN</a>
-            <span aria-hidden="true">|</span>
-            <a href={viHref} class={lang === 'vi' ? 'active' : ''} hreflang="vi">VI</a>
-          </span>
-        </nav>
+    <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+    </div>
+    <div class="paginacontainer">
+      <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
       </div>
-    </header>
-    <main class="wrap">
-      <slot />
+    </div>
+
+    <div style="background-image: url(/assets/images/background/bg1.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+      <header>
+        <div class="header-area homepage2 header header-sticky d-none d-lg-block" id="header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="header-elements">
+                  <div class="site-logo">
+                    <a href={studioRoot}><img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:44px;width:auto" /></a>
+                  </div>
+                  <div class="main-menu">
+                    <ul>
+                      <li><a href={studioRoot}>{T.navHome}</a></li>
+                      <li><a href={`${studioRoot}#games`}>{T.navGames}</a></li>
+                      <li><a href={`${studioRoot}#about`}>{T.navAbout}</a></li>
+                      <li><a href={blogHome}>{T.navNews}</a></li>
+                      <li><a href={`${studioRoot}#contact`}>{T.navContact}</a></li>
+                    </ul>
+                    <a href={otherLangHref} class="header-btn2">{otherLangLabel}</a>
+                    <a href={PLAY_STORE_URL} class="header-btn3">{T.play}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-header mobile-haeder2 d-block d-lg-none">
+        <div class="container-fluid">
+          <div class="col-12">
+            <div class="mobile-header-elements">
+              <div class="mobile-logo">
+                <a href={studioRoot}><img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:38px;width:auto" /></a>
+              </div>
+              <div class="mobile-nav-icon dots-menu">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-sidebar mobile-sidebar2">
+      <div class="logosicon-area">
+        <div class="logos">
+          <img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:38px;width:auto" />
+        </div>
+        <div class="menu-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <div class="mobile-nav mobile-nav2">
+        <ul class="mobile-nav-list nav-list2">
+          <li><a href={studioRoot}>{T.navHome}</a></li>
+          <li><a href={`${studioRoot}#games`}>{T.navGames}</a></li>
+          <li><a href={`${studioRoot}#about`}>{T.navAbout}</a></li>
+          <li><a href={blogHome}>{T.navNews}</a></li>
+          <li><a href={`${studioRoot}#contact`}>{T.navContact}</a></li>
+          <li><a href={otherLangHref}>{otherLangLabel}</a></li>
+        </ul>
+        <div class="allmobilesection">
+          <a href={PLAY_STORE_URL} class="header-btn2 mobile-get">{T.play}</a>
+          <div class="single-footer">
+            <h3>Contact Info</h3>
+            <div class="footer4-contact-info">
+              <div class="contact-info-single">
+                <div class="contact-info-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-info-text">
+                  <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                </div>
+              </div>
+              <div class="single-footer">
+                <h3>Our Location</h3>
+                <div class="contact-info-single">
+                  <div class="contact-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="contact-info-text">
+                    <a href={`mailto:${CONTACT_EMAIL}`}>{T.location}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="blog-main">
+      <div class="blog-wrap">
+        <slot />
+      </div>
     </main>
-    <footer class="site">
-      <div class="wrap">
-        <p>
-          © {new Date().getFullYear()} BumStudio · <a href={studioHref}>bumstudio.net</a> ·
-          <a href={rssHref}>RSS</a> · {ui.contact}: {CONTACT_EMAIL}
-        </p>
+
+    <div class="footer2-section-area" id="contact" style="background-image: url(/assets/images/background/bg1.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 m-auto">
+            <div class="footer-header heading2 text-center sp8">
+              <h2>{T.footH}</h2>
+              <span>{T.footSub}</span>
+              <div class="div text-center">
+                <a href={blogHome} class="header-btn2">{T.footBtn}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="footer2-last-section">
+              <div class="row">
+                <div class="col-lg col-md-6 col-12">
+                  <div class="footer-auhtor-area">
+                    <img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:48px;width:auto" />
+                    <p>{T.intro}</p>
+                  </div>
+                </div>
+                <div class="col-lg col-md-6 col-12">
+                  <div class="footer-auhtor-area">
+                    <h3>{T.colExplore}</h3>
+                    <ul>
+                      <li><a href={studioRoot}>{T.navHome}</a></li>
+                      <li><a href={`${studioRoot}#games`}>{T.navGames}</a></li>
+                      <li><a href={`${studioRoot}#about`}>{T.navAbout}</a></li>
+                      <li><a href={blogHome}>{T.navNews}</a></li>
+                      <li><a href={`mailto:${CONTACT_EMAIL}`}>{T.navContact}</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg col-md-6 col-12">
+                  <div class="footer-auhtor-area">
+                    <h3>{T.colGames}</h3>
+                    <ul>
+                      <li><a href={hubRps}>RPS Master</a></li>
+                      <li><a href={hubSlide}>Slide Pocket 15</a></li>
+                      <li><a href={PLAY_STORE_URL}>{T.playStore}</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg col-md-6 col-12">
+                  <div class="footer-auhtor-area">
+                    <h3>{T.colBlog}</h3>
+                    <ul>
+                      {CATEGORIES.map((c) => (
+                        <li><a href={catHref(categorySlug(c))}>{CAT_LABEL[lang][c]}</a></li>
+                      ))}
+                      <li><a href={rssHref}>RSS Feed</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg col-md-6 col-12">
+                  <div class="footer-auhtor-area">
+                    <h3>{T.colContact}</h3>
+                    <ul>
+                      <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+                      <li><a href={`${studioRoot}#contact`}>Hanoi, Vietnam</a></li>
+                      <li><a href={studioRoot}>bumstudio.net</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="copyright-social-area">
+                    <ul>
+                      <li class="copy"><p>Copyright @{new Date().getFullYear()} BumStudio. All Rights Reserved</p></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+
+    {quadJs.map((f) => <script src={`/assets/js/${f}`}></script>)}
   </body>
 </html>

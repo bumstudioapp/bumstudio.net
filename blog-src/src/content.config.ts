@@ -12,6 +12,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     category: z.enum(['News', 'Guides', 'Updates']),
+    game: z.enum(['rps-master', 'slide-pocket']).default('rps-master'),
     tags: z.array(z.string()).default([]),
     heroImage: z.string().optional(),
     draft: z.boolean().default(false),

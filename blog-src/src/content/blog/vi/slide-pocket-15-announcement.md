@@ -3,6 +3,7 @@ title: "Game Tiếp Theo Của BumStudio: Slide Pocket 15, Xếp Hình Trượt 
 description: "RPS Master đã lên sóng và game tiếp theo đã ở trên bàn làm việc. Làm quen Slide Pocket 15, game xếp hình trượt lấy cảm hứng từ đồ chơi nhựa kinh điển."
 pubDate: 2026-11-19
 category: News
+game: slide-pocket
 tags: ["slide-pocket-15", "announcement", "bumstudio"]
 ---
 

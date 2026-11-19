@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=`device-width`, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!--=====TITLE=======-->
+  <title>RPS Master — Rock Paper Scissors Game for Android | BumStudio</title>
+  <meta name="description" content="Play RPS Master free on Google Play: live 1v1 arena, friend rooms with no ads, and a 957-stage conquest across the Silk Road. News, guides and updates.">
+  <link rel="canonical" href="https://bumstudio.net/rpsmaster/">
+  <link rel="alternate" hreflang="en" href="https://bumstudio.net/rpsmaster/">
+  <link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/rpsmaster/">
+  <link rel="alternate" hreflang="x-default" href="https://bumstudio.net/rpsmaster/">
+
+  <!--=====FAV ICON=======-->
+  <link rel="shortcut icon" href="/assets/images/logo/logo-bumstudio-icon.png">
+
+  <!--=====CSS=======-->
+  <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/plugins/swiper.bundle.css">
+  <link rel="stylesheet" href="/assets/css/plugins/fontawesome.css">
+  <link rel="stylesheet" href="/assets/css/plugins/mobile.css">
+  <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css">
+  <link rel="stylesheet" href="/assets/css/plugins/slick-slider.css">
+  <link rel="stylesheet" href="/assets/css/plugins/owlcarousel.min.css">
+  <link rel="stylesheet" href="/assets/css/plugins/aos.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/master.css">
+
+  <!--=====JQUERY=======-->
+  <script src="/assets/js/plugins/jquery-3-6-0.min.js"></script>
+</head>
+<body>
+<!--===== PRELOADER STARTS =======-->
+  <div id="preloader">
+    <div class="preloader"><span></span><span></span></div>
+  </div>
+ <!--===== PRELOADER ENDS =======-->
+ 
+  <!--===== PAGE PROGRESS START=======-->
+  <div class="paginacontainer">
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+      </svg>
+    </div>
+  </div>
+<!--===== PAGE PROGRESS END=======-->
+
+  
+  <!--=====HEADER START=======-->
+  <header>
+    <div class="header-area homepage2 header header-sticky d-none d-lg-block " id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-elements">
+              <div class="site-logo">
+                <a href="/"><img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:44px;width:auto"></a>
+              </div>
+              <div class="main-menu">
+                <ul>
+                  <li><a href="/#home">Home</a></li>
+                  <li><a href="/#games">Game</a></li>
+                  <li><a href="/#about">About</a></li>
+                  <li><a href="/blog/">News</a></li>
+                  <li><a href="/#contact">Contact</a></li>
+                </ul>
+                <a href="/vi/rpsmaster/" class="header-btn2">VI</a>
+                <a href="https://play.google.com/store/apps/details?id=net.bumstudio.rpsgame" class="header-btn3">Play RPS Master</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--=====HEADER END =======-->
+
+  <!--===== MOBILE HEADER STARTS =======-->
+ <div class="mobile-header mobile-haeder2 d-block d-lg-none">
+  <div class="container-fluid">
+    <div class="col-12">
+      <div class="mobile-header-elements">
+        <div class="mobile-logo">
+          <a href="/"><img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:38px;width:auto"></a>
+        </div>
+        <div class="mobile-nav-icon dots-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-sidebar mobile-sidebar2">
+  <div class="logosicon-area">
+    <div class="logos">
+      <img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:38px;width:auto">
+    </div>
+    <div class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+   </div>
+  <div class="mobile-nav mobile-nav2">
+    <ul class="mobile-nav-list nav-list2">
+      <li><a href="/#home">Home</a></li>
+      <li><a href="/#games">Game</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog/">News</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/vi/rpsmaster/">VI</a></li>
+    </ul>
+
+    <div class="allmobilesection">
+      <a href="https://play.google.com/store/apps/details?id=net.bumstudio.rpsgame" class="header-btn2 mobile-get">Play RPS Master</a>
+      <div class="single-footer">
+        <h3>Contact Info</h3>
+        <div class="footer4-contact-info">
+          <div class="contact-info-single">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="mailto:hello@bumstudio.net">hello@bumstudio.net</a>
+            </div>
+          </div>
+
+          <div class="single-footer">
+            <h3>Our Location</h3>
+            <div class="contact-info-single">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-info-text">
+                <a href="mailto:hello@bumstudio.net">Kim Lien, Hanoi, Vietnam</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+  <!--===== MOBILE HEADER ENDS =======-->
+<!--===== WELCOME STARTS =======-->
+<div class="welcome2-section-area" id="home" style="background-image: url(/assets/images/background/header2-bg.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="welcome2-header heading3">
+                    <span data-aos="fade-up" data-aos-duration="600">RPS Master · Free on Google Play</span>
+                    <h1 data-aos="fade-up" data-aos-duration="800">RPS Master: Rock Paper Scissors, Rebuilt for Your Phone</h1>
+                    <p data-aos="fade-up" data-aos-duration="1000">RPS Master turns the 30-second playground classic into a full mobile game: a live 1v1 arena, private friend rooms and a 957-stage conquest across the Silk Road.</p>
+                    <div data-aos="fade-up" data-aos-duration="1200">
+                      <a href="https://play.google.com/store/apps/details?id=net.bumstudio.rpsgame" class="header-btn2">Get it on Google Play</a>
+                    <a href="/blog/games/rps-master/" class="header-btn3">Read the Game Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="header-images-area">
+                    <div class="header-elements1 reveal">
+                        <img src="/assets/images/all-images/feature-rps.png" alt="">
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== WELCOME ENDS =======-->
+<!--===== STATS STARTS =======-->
+<div class="brand2-section-area sp8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="brand2-header text-center">
+                    <h4 data-aos="fade-up" data-aos-duration="1000">RPS Master, by the numbers</h4>
+                </div>
+            </div>
+        </div>
+        <div class="space30"></div>
+        <div class="row text-center">
+      <div class="col-lg-3 col-md-6"><h3 style="font-size:2.2rem;">957</h3><p>Conquest stages</p></div>
+      <div class="col-lg-3 col-md-6"><h3 style="font-size:2.2rem;">48</h3><p>Countries on the Silk Road</p></div>
+      <div class="col-lg-3 col-md-6"><h3 style="font-size:2.2rem;">13</h3><p>Languages supported</p></div>
+      <div class="col-lg-3 col-md-6"><h3 style="font-size:2.2rem;">177</h3><p>Countries on Google Play</p></div>
+        </div>
+    </div>
+</div>
+<!--===== STATS ENDS =======-->
+<!--===== GENERATION AREA STARTS =======-->
+<div class="genaration2-section-area sp3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="genaration2-header text-center heading4">
+                    <span data-aos="fade-up" data-aos-duration="800">Inside the Game</span>
+                    <h2 data-aos="fade-up" data-aos-duration="1000">One Simple Game, Four Ways to Play</h2>
+                </div>
+            </div>
+        </div>
+        <div class="space60"></div>
+        <div class="col-lg-12 m-auto">
+          <div class="tabs-area" data-aos="fade-up" data-aos-duration="1000">
+            <ul class="nav nav-pills justify-center" id="pills-tab">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">1v1 Arena</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-hyper-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Conquest</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-delivary-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Friend Rooms</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link m-0" id="pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#pills-inbox" type="button" role="tab" aria-controls="pills-inbox" aria-selected="false">Boost Your IQ</button>
+              </li>
+            </ul>
+          </div>
+          <div class="space60"></div>
+           <div class="tabs-content-area">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" >
+                <div class="tabs-contents">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                     <div class="tabs-images reveal">
+                      <img src="/assets/images/all-images/service2-img1.png" alt="">
+                     </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="tabs-text-area" data-aos="fade-up" data-aos-duration="800">
+                        <div class="tabs-icon">
+                          <img src="/assets/images/icons/service-icon1.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/rock-paper-scissors-strategy-tips/">Real players, real reads</a>
+                          <p>Matchmaking pairs you with players worldwide — and smart stand-ins keep queues instant while the community grows.</p>
+                        </div>
+                      </div>
+                      <div class="space20"> </div>
+                      <div class="tabs-text-area" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="tabs-icon1">
+                          <img src="/assets/images/icons/service-icon2.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/rock-paper-scissors-strategy-tips/">Best of five, best of nerves</a>
+                          <p>Five rounds per match: enough time to spot a habit, set a trap and punish it.</p>
+                        </div>
+                      </div>
+                      <div class="space20"></div>
+                      <div class="tabs-text-area" data-aos="fade-up" data-aos-duration="1200">
+                        <div class="tabs-icon2">
+                          <img src="/assets/images/icons/service-icon3.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/how-to-play-rps-master-beginners-guide/">Reputation keeps it fair</a>
+                          <p>Finish what you start. Leaving early costs reputation, and the Arena rewards players who play every match out.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" >
+                <div class="tabs-contents">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                     <div class="tabs-images reveal">
+                      <img src="/assets/images/all-images/works-img1.png" alt="">
+                     </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon">
+                          <img src="/assets/images/icons/service-icon1.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/introducing-rps-master/">Travel the Silk Road</a>
+                          <p>Journey through 48 countries and 957 stages, from Vietnam all the way to Türkiye.</p>
+                        </div>
+                      </div>
+                      <div class="space20"> </div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon1">
+                          <img src="/assets/images/icons/service-icon2.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/introducing-rps-master/">Beat the ghosts</a>
+                          <p>Every cleared stage leaves a ghost — the exact five moves its conqueror used. Out-read the ghost to take the stage.</p>
+                        </div>
+                      </div>
+                      <div class="space20"></div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon2">
+                          <img src="/assets/images/icons/service-icon3.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/introducing-rps-master/">Stars pay flowers</a>
+                          <p>Clear a stage with up to 3 stars to earn lucky flowers for hand icons and emotions.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel">
+                <div class="tabs-contents">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                     <div class="tabs-images">
+                      <img src="/assets/images/all-images/service2-img1.png" alt="">
+                     </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon">
+                          <img src="/assets/images/icons/service-icon1.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/rps-master-2-0-whats-new/">A code, a friend, a match</a>
+                          <p>Create a room, share its 6-character code, and play your rival directly — anytime.</p>
+                        </div>
+                      </div>
+                      <div class="space20"> </div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon1">
+                          <img src="/assets/images/icons/service-icon2.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/rps-master-2-0-whats-new/">Zero ads, zero pressure</a>
+                          <p>Friend rooms never show ads and never touch your win/loss record or reputation.</p>
+                        </div>
+                      </div>
+                      <div class="space20"></div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon2">
+                          <img src="/assets/images/icons/service-icon3.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/rps-master-2-0-whats-new/">Rematch by vote</a>
+                          <p>Both players vote to run it back, so a good rivalry can last all evening.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-inbox" role="tabpanel" aria-labelledby="pills-inbox-tab" >
+                <div class="tabs-contents">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                     <div class="tabs-images">
+                      <img src="/assets/images/all-images/works-img1.png" alt="">
+                     </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon">
+                          <img src="/assets/images/icons/service-icon1.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/how-to-play-rps-master-beginners-guide/">Questions between matches</a>
+                          <p>Short brain-training quizzes woven into your session, with progress saved per question.</p>
+                        </div>
+                      </div>
+                      <div class="space20"> </div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon1">
+                          <img src="/assets/images/icons/service-icon2.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/how-to-play-rps-master-beginners-guide/">First correct answer pays</a>
+                          <p>Every IQ question pays out lucky flowers the first time you get it right.</p>
+                        </div>
+                      </div>
+                      <div class="space20"></div>
+                      <div class="tabs-text-area">
+                        <div class="tabs-icon2">
+                          <img src="/assets/images/icons/service-icon3.svg" alt="">
+                        </div>
+                        <div class="tabs-text">
+                          <a href="/blog/how-to-play-rps-master-beginners-guide/">Titles every five levels</a>
+                          <p>Level up to earn titles, unlock the Arena at level 2 and grow your collection.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>
+<!--===== GENERATION AREA ENDS =======-->
+<!--===== GAME NEWS STARTS =======-->
+<div class="blog2-section-area sp4">
+  <div class="container">
+    <div class="row"><div class="col-lg-6 m-auto"><div class="blog2-header text-center heading4">
+      <span data-aos="fade-up" data-aos-duration="800">Blog</span>
+      <h2 data-aos="fade-up" data-aos-duration="1000">RPS Master News & Guides</h2>
+    </div></div></div>
+    <div class="space60"></div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-duration="800">
+        <div class="blog-box-area2">
+          <div class="blog2-img"><img src="/assets/images/all-images/feature-rps.png" alt=""></div>
+          <div class="blog-all-boxarea">
+            <div class="blog-tags-area">
+              <a href="/blog/introducing-rps-master/">News</a>
+              <div class="date"><a><img src="/assets/images/icons/clock-img1.svg" alt="">Nov 11, 2026</a></div>
+            </div>
+            <div class="blog2-content">
+              <a href="/blog/introducing-rps-master/">Introducing RPS Master — the Rock Paper Scissors Game, Rebuilt for Your Phone</a>
+              <p>Meet RPS Master by BumStudio: 1v1 arenas, friend rooms, a Conquest map and brain-training quizzes in one free Android & iOS game.</p>
+              <a href="/blog/introducing-rps-master/" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-duration="1000">
+        <div class="blog-box-area2">
+          <div class="blog2-img"><img src="/assets/images/all-images/feature-rps.png" alt=""></div>
+          <div class="blog-all-boxarea">
+            <div class="blog-tags-area">
+              <a href="/blog/rps-master-2-0-whats-new/">Updates</a>
+              <div class="date"><a><img src="/assets/images/icons/clock-img1.svg" alt="">Nov 10, 2026</a></div>
+            </div>
+            <div class="blog2-content">
+              <a href="/blog/rps-master-2-0-whats-new/">RPS Master 2.0: Accounts, Friend Rooms and a Whole New Game</a>
+              <p>Version 2.0 connects RPS Master to the server: free accounts, cloud progress, friend rooms, Google sign-in, the new shop and more. Here's everything inside.</p>
+              <a href="/blog/rps-master-2-0-whats-new/" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-duration="1200">
+        <div class="blog-box-area2">
+          <div class="blog2-img"><img src="/assets/images/all-images/feature-rps.png" alt=""></div>
+          <div class="blog-all-boxarea">
+            <div class="blog-tags-area">
+              <a href="/blog/how-to-play-rps-master-beginners-guide/">Guides</a>
+              <div class="date"><a><img src="/assets/images/icons/clock-img1.svg" alt="">Nov 8, 2026</a></div>
+            </div>
+            <div class="blog2-content">
+              <a href="/blog/how-to-play-rps-master-beginners-guide/">How to Play RPS Master: a Beginner's Guide</a>
+              <p>New to RPS Master? Learn the five-round match format, the Arena, practice mode, flowers, reputation and Conquest in five minutes.</p>
+              <a href="/blog/how-to-play-rps-master-beginners-guide/" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="space30"></div>
+    <div class="text-center"><a href="/blog/games/rps-master/" class="header-btn2">All posts about this game</a></div>
+  </div>
+</div>
+<!--===== GAME NEWS ENDS =======-->
+<!--===== CTA STARTS =======-->
+<div class="service2-section-area sp3" style="background-image: url(/assets/images/background/footer-bg2.png); background-repeat: no-repeat; background-size: cover;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 m-auto">
+        <div class="service2-header heading4 text-center">
+          <span data-aos="fade-up" data-aos-duration="800">Free to Play</span>
+          <h2 data-aos="fade-up" data-aos-duration="1000">Ready to Throw Your First Hand?</h2>
+          <p data-aos="fade-up" data-aos-duration="1200">Download RPS Master and play your first match in under a minute. No pay-to-win — just you, your opponent, and the read.</p>
+          <div class="space30"></div>
+          <div data-aos="fade-up" data-aos-duration="1400">
+            <a href="https://play.google.com/store/apps/details?id=net.bumstudio.rpsgame" class="header-btn2">Get it on Google Play</a>
+            <a href="/blog/" class="header-btn3">Read the Blog</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== CTA ENDS =======-->
+<!--===== FOOTER AREA STARTS =======-->
+<div class="footer2-section-area" id="contact" style="background-image: url(/assets/images/background/bg1.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 m-auto">
+        <div class="footer-header heading2 text-center sp8">
+          <h2 data-aos="fade-up" data-aos-duration="1000">Follow the Journey — Play the Games</h2>
+          <span data-aos="fade-up" data-aos-duration="1200">RPS Master is free on Google Play · New posts on the blog every week</span>
+          <div class="div text-center" data-aos="fade-up" data-aos-duration="1400">
+            <a href="/blog/" class="header-btn2">Visit the Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="footer2-last-section">
+          <div class="row">
+            <div class="col-lg col-md-6 col-12">
+              <div class="footer-auhtor-area">
+                <img src="/assets/images/logo/logo-bumstudio.png" alt="BumStudio" style="height:48px;width:auto">
+                <p>BumStudio is an independent game studio from Hanoi, Vietnam — crafting small games with big charm.</p>
+                
+              </div>
+            </div>
+
+                        <div class="col-lg col-md-6 col-12">
+              <div class="footer-auhtor-area">
+                <h3>Explore</h3>
+                <ul>
+                  <li><a href="/#home">Home</a></li>
+                  <li><a href="/#games">Games</a></li>
+                  <li><a href="/#about">About</a></li>
+                  <li><a href="/blog/">News</a></li>
+                  <li><a href="mailto:hello@bumstudio.net">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+
+                        <div class="col-lg col-md-6 col-12">
+              <div class="footer-auhtor-area">
+                <h3>Games</h3>
+                <ul>
+                  <li><a href="/rpsmaster/">RPS Master</a></li>
+                  <li><a href="/slidepocket/">Slide Pocket 15</a></li>
+                  <li><a href="https://play.google.com/store/apps/details?id=net.bumstudio.rpsgame">RPS Master on Google Play</a></li>
+                </ul>
+              </div>
+            </div>
+
+                        <div class="col-lg col-md-6 col-12">
+              <div class="footer-auhtor-area">
+                <h3>Blog</h3>
+                <ul>
+                  <li><a href="/blog/category/news/">News</a></li>
+                  <li><a href="/blog/category/guides/">Guides</a></li>
+                  <li><a href="/blog/category/updates/">Updates</a></li>
+                  <li><a href="/blog/rss.xml">RSS Feed</a></li>
+                </ul>
+              </div>
+            </div>
+
+                        <div class="col-lg col-md-6 col-12">
+              <div class="footer-auhtor-area">
+                <h3>Contact</h3>
+                <ul>
+                  <li><a href="mailto:hello@bumstudio.net">hello@bumstudio.net</a></li>
+                  <li><a href="/#contact">Hanoi, Vietnam</a></li>
+                  <li><a href="/">bumstudio.net</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="copyright-social-area">
+                <ul>
+                  <li class="copy"><p>Copyright @2026 BumStudio. All Rights Reserved</p></li>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== FOOTER ENDS =======-->
+<!--=====JS=======-->
+  <script src="/assets/js/plugins/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/swiper.bundle.js"></script>
+  <script src="/assets/js/plugins/mobilemenu.js"></script>
+  <script src="/assets/js/plugins/slick-slider.js"></script>
+  <script src="/assets/js/plugins/owlcarousel.min.js"></script>
+  <script src="/assets/js/plugins/counter.js"></script>
+  <script src="/assets/js/plugins/waypoints.js"></script>
+  <script src="/assets/js/plugins/aos.js"></script>
+  <script src="/assets/js/plugins/gsap.min.js"></script>
+  <script src="/assets/js/plugins/magnific-popup.js"></script>
+  <script src="/assets/js/plugins/ScrollTrigger.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

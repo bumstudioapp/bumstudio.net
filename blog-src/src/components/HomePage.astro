@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from './PostCard.astro';
-import { BASE, UI, CAT_LABEL, CATEGORIES, categorySlug, type Lang } from '../config';
-import { getPosts, homePath, categoryPath } from '../lib/posts';
+import { BASE, UI, CAT_LABEL, CATEGORIES, GAMES, GAME_LABEL, categorySlug, type Lang } from '../config';
+import { getPosts, homePath, categoryPath, gamePath } from '../lib/posts';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -17,6 +17,9 @@ const posts = await getPosts(lang);
     <a class="chip" href={`${BASE}${homePath(lang)}`}>{ui.allPosts}</a>
     {CATEGORIES.map((c) => (
       <a class="chip light" href={`${BASE}${categoryPath(lang, categorySlug(c))}`}>{CAT_LABEL[lang][c]}</a>
+    ))}
+    {GAMES.map((g) => (
+      <a class="chip light" href={`${BASE}${gamePath(lang, g)}`}>{GAME_LABEL[lang][g]}</a>
     ))}
   </nav>
   <ul class="post-list">

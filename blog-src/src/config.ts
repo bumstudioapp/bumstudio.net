@@ -11,6 +11,23 @@ export const PLAY_STORE_URL =
 export const CONTACT_EMAIL = 'hello@bumstudio.net';
 
 export const CATEGORIES = ['News', 'Guides', 'Updates'] as const;
+
+// ---- Games ----
+export const GAMES = ['rps-master', 'slide-pocket'] as const;
+export type Game = (typeof GAMES)[number];
+export const GAME_LABEL: Record<Lang, Record<Game, string>> = {
+  en: { 'rps-master': 'RPS Master', 'slide-pocket': 'Slide Pocket 15' },
+  vi: { 'rps-master': 'RPS Master', 'slide-pocket': 'Slide Pocket 15' },
+};
+// Game hub pages on the main site (outside the blog).
+export const GAME_HUB: Record<Game, string> = {
+  'rps-master': '/rpsmaster/',
+  'slide-pocket': '/slidepocket/',
+};
+export const GAME_HUB_VI: Record<Game, string> = {
+  'rps-master': '/vi/rpsmaster/',
+  'slide-pocket': '/vi/slidepocket/',
+};
 export type Category = (typeof CATEGORIES)[number];
 export const categorySlug = (c: string) => c.toLowerCase();
 
@@ -43,6 +60,16 @@ export const UI = {
       'Put every tip into practice in live 1v1 matches, friend rooms and the Conquest map. Free to play on Android.',
     ctaLink: 'Download on Google Play →',
     contact: 'Contact',
+    games: 'Games',
+    gameDesc: (g: Game) =>
+      g === 'rps-master'
+        ? 'News, guides and updates about RPS Master only.'
+        : 'Development news and announcements about Slide Pocket 15, our upcoming sliding puzzle game.',
+    visitGame: 'Visit the game page →',
+    ctaSlideTitle: 'Slide Pocket 15 — in development',
+    ctaSlideBody:
+      'Our next game is a pocket sliding puzzle with a classic 3×5 board. Follow the blog for development news and the launch date.',
+    ctaSlideLink: 'More about Slide Pocket 15 →',
     dateLocale: 'en-GB',
     ogLocale: 'en_US',
   },
@@ -64,6 +91,16 @@ export const UI = {
       'Áp dụng mọi mẹo vào các trận 1v1 trực tiếp, phòng bạn bè và bản đồ Chinh phục. Chơi miễn phí trên Android.',
     ctaLink: 'Tải trên Google Play →',
     contact: 'Liên hệ',
+    games: 'Game',
+    gameDesc: (g: Game) =>
+      g === 'rps-master'
+        ? 'Tin tức, hướng dẫn và cập nhật chỉ về RPS Master.'
+        : 'Tin tức phát triển và thông báo về Slide Pocket 15, game xếp hình trượt sắp ra mắt của BumStudio.',
+    visitGame: 'Xem trang game →',
+    ctaSlideTitle: 'Slide Pocket 15 — đang phát triển',
+    ctaSlideBody:
+      'Game tiếp theo của BumStudio là xếp hình trượt bỏ túi với bàn 3×5 cổ điển. Theo dõi blog để xem tin phát triển và ngày ra mắt.',
+    ctaSlideLink: 'Tìm hiểu Slide Pocket 15 →',
     dateLocale: 'vi-VN',
     ogLocale: 'vi_VN',
   },

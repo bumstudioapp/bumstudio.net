@@ -3,6 +3,7 @@ title: "Next from BumStudio: Slide Pocket 15, the Pocket Sliding Puzzle"
 description: "RPS Master is live, and our next game is already on the bench. Meet Slide Pocket 15, a pocket sliding picture puzzle inspired by the classic plastic toy."
 pubDate: 2026-11-19
 category: News
+game: slide-pocket
 tags: ["slide-pocket-15", "announcement", "bumstudio"]
 ---
 

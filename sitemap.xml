@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bumstudio.net/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/"/>
@@ -14,9 +13,39 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/"/>
   </url>
   <url>
+    <loc>https://bumstudio.net/rpsmaster/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/rpsmaster/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/rpsmaster/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/rpsmaster/"/>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/vi/rpsmaster/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/rpsmaster/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/rpsmaster/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/rpsmaster/"/>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/slidepocket/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/slidepocket/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/slidepocket/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/slidepocket/"/>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/vi/slidepocket/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/slidepocket/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/slidepocket/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/slidepocket/"/>
+  </url>
+  <url>
     <loc>https://bumstudio.net/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/blog/vi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/blog/"/>
   </url>
   <url>
     <loc>https://bumstudio.net/blog/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/blog/vi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/blog/"/>
   </url>
 </urlset>

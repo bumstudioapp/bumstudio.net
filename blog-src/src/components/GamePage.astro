@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from './PostCard.astro';
+import { BASE, UI, GAME_LABEL, GAME_HUB, GAME_HUB_VI, type Game, type Lang } from '../config';
+import { getPosts, gamePath } from '../lib/posts';
+
+interface Props { lang: Lang; game: Game; }
+const { lang, game } = Astro.props;
+const ui = UI[lang];
+const posts = await getPosts(lang, game);
+const hub = lang === 'vi' ? GAME_HUB_VI[game] : GAME_HUB[game];
+---
+
+<BaseLayout
+  title={`${GAME_LABEL[lang][game]} Blog — BumStudio`}
+  description={ui.gameDesc(game)}
+  lang={lang}
+  i18nPath={`games/${game}/`}
+>
+  <h1>{GAME_LABEL[lang][game]}</h1>
+  <p class="lede">{ui.gameDesc(game)}</p>
+  <p><a class="chip" href={hub}>{ui.visitGame}</a></p>
+  {posts.length === 0 ? (
+    <p class="lede">{ui.noPosts}</p>
+  ) : (
+    <ul class="post-list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </ul>
+  )}
+</BaseLayout>
