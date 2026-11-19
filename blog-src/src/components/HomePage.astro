@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from './PostCard.astro';
+import { BASE, UI, CAT_LABEL, CATEGORIES, categorySlug, type Lang } from '../config';
+import { getPosts, homePath, categoryPath } from '../lib/posts';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const ui = UI[lang];
+const posts = await getPosts(lang);
+---
+
+<BaseLayout lang={lang} i18nPath="">
+  <h1>{ui.homeTitle}</h1>
+  <p class="lede">{ui.homeLede}</p>
+  <nav class="cats">
+    <a class="chip" href={`${BASE}${homePath(lang)}`}>{ui.allPosts}</a>
+    {CATEGORIES.map((c) => (
+      <a class="chip light" href={`${BASE}${categoryPath(lang, categorySlug(c))}`}>{CAT_LABEL[lang][c]}</a>
+    ))}
+  </nav>
+  <ul class="post-list">
+    {posts.map((post) => <PostCard post={post} />)}
+  </ul>
+</BaseLayout>

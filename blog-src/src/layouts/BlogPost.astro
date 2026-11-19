@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { SITE_URL, BASE, UI, CAT_LABEL, PLAY_STORE_URL, categorySlug } from '../config';
+import { langOf, slugOf, postPath, categoryPath } from '../lib/posts';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { entry: CollectionEntry<'blog'>; }
+const { entry } = Astro.props;
+const d = entry.data;
+const lang = langOf(entry);
+const slug = slugOf(entry);
+const ui = UI[lang];
+const fmt = (date: Date) =>
+  date.toLocaleDateString(ui.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description: d.description,
+  datePublished: d.pubDate.toISOString(),
+  ...(d.updatedDate ? { dateModified: d.updatedDate.toISOString() } : {}),
+  author: { '@type': 'Organization', name: 'BumStudio', url: SITE_URL },
+  publisher: { '@type': 'Organization', name: 'BumStudio', url: SITE_URL },
+  mainEntityOfPage: `${SITE_URL}${BASE}${postPath(lang, slug)}`,
+  inLanguage: lang === 'vi' ? 'vi-VN' : 'en',
+  articleSection: d.category,
+  keywords: d.tags.join(', '),
+};
+---
+
+<BaseLayout title={`${d.title} — RPS Master Blog`} description={d.description} type="article" image={d.heroImage} jsonLd={articleLd} lang={lang} i18nPath={`${slug}/`}>
+  <article class="post">
+    <div class="meta">
+      <a class="chip" href={`${BASE}${categoryPath(lang, categorySlug(d.category))}`}>{CAT_LABEL[lang][d.category]}</a>
+      <time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time>
+      {d.updatedDate && <span>· {ui.updated} {fmt(d.updatedDate)}</span>}
+    </div>
+    <h1>{d.title}</h1>
+    <p class="lede">{d.description}</p>
+    {d.heroImage && <img src={d.heroImage} alt={d.title} loading="eager" />}
+    <slot />
+    {d.tags.length > 0 && (
+      <p class="meta">{d.tags.map((t) => <span class="chip light">#{t}</span>)}</p>
+    )}
+    <aside class="cta">
+      <strong>{ui.ctaTitle}</strong>
+      <p>{ui.ctaBody}</p>
+      <a href={PLAY_STORE_URL} rel="noopener">{ui.ctaLink}</a>
+    </aside>
+  </article>
+</BaseLayout>

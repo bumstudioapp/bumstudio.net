@@ -1,0 +1,48 @@
+name: Build blog
+
+# Rebuild the Astro blog whenever a post or source file changes in blog-src/.
+# Posting flow: add/edit a Markdown file in blog-src/src/content/blog/en (and vi),
+# commit — this workflow builds and publishes into blog/ automatically.
+on:
+  push:
+    paths:
+      - 'blog-src/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: blog-src/package-lock.json
+
+      - name: Install and build
+        working-directory: blog-src
+        run: |
+          npm ci
+          npm run build
+
+      - name: Publish into blog/
+        run: |
+          rm -rf blog
+          cp -r blog-src/dist blog
+
+      - name: Commit rebuilt blog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog
+          if git diff --cached --quiet; then
+            echo "Blog output unchanged — nothing to commit."
+          else
+            git commit -m "Rebuild blog"
+            git push
+          fi

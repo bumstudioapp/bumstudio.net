@@ -1,0 +1,21 @@
+---
+import { BASE, UI, CAT_LABEL, categorySlug } from '../config';
+import { langOf, slugOf, postPath, categoryPath, type PostEntry } from '../lib/posts';
+
+interface Props { post: PostEntry; }
+const { post } = Astro.props;
+const d = post.data;
+const lang = langOf(post);
+const ui = UI[lang];
+const fmt = (date: Date) =>
+  date.toLocaleDateString(ui.dateLocale, { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+<li class="post-card">
+  <div class="meta">
+    <a class="chip" href={`${BASE}${categoryPath(lang, categorySlug(d.category))}`}>{CAT_LABEL[lang][d.category]}</a>
+    <time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time>
+  </div>
+  <h3><a href={`${BASE}${postPath(lang, slugOf(post))}`}>{d.title}</a></h3>
+  <p>{d.description}</p>
+</li>

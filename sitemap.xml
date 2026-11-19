@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bumstudio.net/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/"/>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bumstudio.net/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bumstudio.net/vi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bumstudio.net/"/>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/blog/</loc>
+  </url>
+  <url>
+    <loc>https://bumstudio.net/blog/vi/</loc>
   </url>
 </urlset>
